@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Source+Sans+3:wght@200;300;400;500;600&display=swap');
+
+:root {
+  --sage-green: #8fa497; /* slightly darker for better contrast */
+  --deep-sage: #3f5248;  /* deepen for headings and accents */
+  --charcoal: #0f1210;   /* darken base text for readability */
+  --off-white: #ffffff;  /* landing pure white */
+  --leaf-gold: #c4b07a;
+  --text-secondary: #3a453f;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--charcoal);
+    background-color: var(--off-white);
+    font-weight: 300;
+  }
+}
+
+@layer components {
+  .heading-serif {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    line-height: 1.2;
+  }
+
+  /* Standardize medium-body copy; keep light weight per your preference */
+  .copy-md {
+    @apply text-secondary text-lg sm:text-xl font-light leading-relaxed;
+    font-family: 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', 'Roboto', sans-serif;
+  }
+
+  .nav-link {
+    @apply text-charcoal hover:text-deep-sage transition-colors duration-300 font-extralight;
+  }
+
+  .btn-primary {
+    @apply bg-deep-sage text-off-white px-6 py-3 rounded-xl font-extralight shadow-soft hover:bg-charcoal hover:shadow-lg transition-all duration-300 hover:-translate-y-1 inline-flex items-center;
+  }
+
+  .btn-secondary {
+    @apply bg-off-white text-deep-sage px-6 py-3 rounded-xl font-extralight shadow-soft hover:shadow-lg transition-all duration-300 hover:-translate-y-1 inline-flex items-center border border-deep-sage/20 hover:bg-sage-green/10;
+  }
+
+  .shadow-soft {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .form-input {
+    @apply w-full px-4 py-3 border border-deep-sage/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-deep-sage/20 focus:border-deep-sage transition-colors bg-off-white placeholder:text-secondary;
+  }
+
+  .prose-lg {
+    @apply text-lg leading-relaxed font-normal;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out;
+  }
+}
+
+@layer utilities {
+  .bg-sage-green { background-color: var(--sage-green); }
+  .bg-deep-sage { background-color: var(--deep-sage); }
+  .bg-charcoal { background-color: var(--charcoal); }
+  .bg-off-white { background-color: var(--off-white); }
+  .bg-leaf-gold { background-color: var(--leaf-gold); }
+  
+  .text-sage-green { color: var(--sage-green); }
+  .text-deep-sage { color: var(--deep-sage); }
+  .text-charcoal { color: var(--charcoal); }
+  .text-off-white { color: var(--off-white); }
+  .text-leaf-gold { color: var(--leaf-gold); }
+  .text-secondary { color: var(--text-secondary); }
+  
+  .border-sage-green { border-color: var(--sage-green); }
+  .border-deep-sage { border-color: var(--deep-sage); }
+  .border-charcoal { border-color: var(--charcoal); }
+  .border-off-white { border-color: var(--off-white); }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .animate-fade-in {
+    animation: none;
+  }
+}
