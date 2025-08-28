@@ -14,9 +14,41 @@ const Gallery: React.FC = () => {
       afterSrc: '/gallery/1/garden after.jpg',
       alt: 'Garden Transformation - Before', 
       afterAlt: 'Garden Transformation - After',
-      tags: ['Before & After', 'Gardens'],
+      tags: ['Before & After'],
       isBeforeAfter: true
     },
+    { 
+      src: '/gallery/1/garden 1 before.jpg', 
+      afterSrc: '/gallery/1/garden 2 after.jpg',
+      alt: 'Garden Renovation - Before', 
+      afterAlt: 'Garden Renovation - After',
+      tags: ['Before & After'],
+      isBeforeAfter: true
+    },
+    
+    // Garden after photos as individual items
+    { src: '/gallery/1/garden after.jpg', alt: 'Garden Transformation Result', tags: ['Gardens'] },
+    { src: '/gallery/1/garden 2 after.jpg', alt: 'Garden Renovation Result', tags: ['Gardens'] },
+    
+    // Driveway projects
+    { src: '/gallery/1/driveway 1.avif', alt: 'Modern Driveway Installation', tags: ['Driveways'] },
+    { src: '/gallery/1/driveway 2.avif', alt: 'Block Paving Driveway', tags: ['Driveways'] },
+    { src: '/gallery/1/driveway 3.avif', alt: 'Elegant Driveway Design', tags: ['Driveways'] },
+    { src: '/gallery/1/driveway 4.avif', alt: 'Premium Driveway Project', tags: ['Driveways'] },
+    
+    // Patio installations
+    { src: '/gallery/1/patio 1.avif', alt: 'Contemporary Patio Design', tags: ['Patios'] },
+    { src: '/gallery/1/patio 2.avif', alt: 'Garden Patio Installation', tags: ['Patios'] },
+    
+    // Fencing work
+    { src: '/gallery/1/fence 1.avif', alt: 'Professional Fencing Installation', tags: ['Fencing'] },
+    
+    // Wooden structures
+    { src: '/gallery/1/wooden 1.avif', alt: 'Custom Wooden Structure', tags: ['Fencing'] },
+    { src: '/gallery/1/wooden 2.avif', alt: 'Timber Garden Feature', tags: ['Gardens', 'Fencing'] },
+    
+    // Brick pathways
+    { src: '/gallery/1/brick path 1.avif', alt: 'Decorative Brick Pathway', tags: ['Tiling'] },
     
     // Tree pond water feature series
     { src: '/gallery/1/tree pond.jpg', alt: 'Tree Pond Water Feature', tags: ['Water Features', 'Gardens'] },
@@ -37,8 +69,8 @@ const Gallery: React.FC = () => {
     { src: '/gallery/2ed678_4512af86c9814bb1b8e49d80b9546a19~mv2_d_2048_1365_s_2.avif', alt: 'Garden build 1', tags: ['Gardens'] },
     { src: '/gallery/2ed678_e3af24a5975d4c02a7aac20df84706ad~mv2_d_4032_3024_s_4_2.avif', alt: 'Garden build 2', tags: ['Gardens'] },
     { src: '/gallery/2ed678_bb15ffe32b46478caf012591aa13b29e~mv2_d_4032_3024_s_4_2.avif', alt: 'Patio', tags: ['Patios'] },
-    { src: '/gallery/2ed678_60c6846303484b9fa086969779462344~mv2.avif', alt: 'Driveway', tags: ['Driveways'] },
-    { src: '/gallery/victoria_hodgson_2.avif', alt: 'Fencing', tags: ['Fencing'] },
+    { src: '/gallery/2ed678_60c6846303484b9fa086969779462344~mv2.avif', alt: 'Garden Project', tags: ['Gardens'] },
+    { src: '/gallery/victoria_hodgson_2.avif', alt: 'Patio Installation', tags: ['Patios'] },
   ]), []);
 
   const visible = items.filter(i => activeFilter === 'All' || i.tags.includes(activeFilter));
