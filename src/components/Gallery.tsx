@@ -5,9 +5,35 @@ import LeafDivider from './LeafDivider';
 const Gallery: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   
-  const filters = ['All', 'Gardens', 'Patios', 'Driveways', 'Fencing'];
+  const filters = ['All', 'Before & After', 'Gardens', 'Patios', 'Water Features', 'Tiling', 'Driveways', 'Fencing'];
 
   const items = useMemo(() => ([
+    // Before & After showcase
+    { 
+      src: '/gallery/1/garden before.jpg', 
+      afterSrc: '/gallery/1/garden after.jpg',
+      alt: 'Garden Transformation - Before', 
+      afterAlt: 'Garden Transformation - After',
+      tags: ['Before & After', 'Gardens'],
+      isBeforeAfter: true
+    },
+    
+    // Tree pond water feature series
+    { src: '/gallery/1/tree pond.jpg', alt: 'Tree Pond Water Feature', tags: ['Water Features', 'Gardens'] },
+    { src: '/gallery/1/tree pond 2.jpg', alt: 'Tree Pond Detail View', tags: ['Water Features', 'Gardens'] },
+    { src: '/gallery/1/tree pond architecture.jpg', alt: 'Tree Pond Architectural Design', tags: ['Water Features', 'Gardens'] },
+    
+    // Waterfall feature
+    { src: '/gallery/1/waterfall.jpg', alt: 'Custom Waterfall Feature', tags: ['Water Features', 'Gardens'] },
+    
+    // Tiling series
+    { src: '/gallery/1/tiles.jpg', alt: 'Professional Tiling Work', tags: ['Tiling', 'Patios'] },
+    { src: '/gallery/1/tiles 1.jpg', alt: 'Decorative Tile Installation', tags: ['Tiling', 'Patios'] },
+    { src: '/gallery/1/tiles 2.jpg', alt: 'Patio Tiling Project', tags: ['Tiling', 'Patios'] },
+    { src: '/gallery/1/tiles 3.jpg', alt: 'Custom Tile Design', tags: ['Tiling', 'Patios'] },
+    { src: '/gallery/1/tiles 4.jpg', alt: 'Completed Tile Installation', tags: ['Tiling', 'Patios'] },
+    
+    // Existing gallery items
     { src: '/gallery/2ed678_4512af86c9814bb1b8e49d80b9546a19~mv2_d_2048_1365_s_2.avif', alt: 'Garden build 1', tags: ['Gardens'] },
     { src: '/gallery/2ed678_e3af24a5975d4c02a7aac20df84706ad~mv2_d_4032_3024_s_4_2.avif', alt: 'Garden build 2', tags: ['Gardens'] },
     { src: '/gallery/2ed678_bb15ffe32b46478caf012591aa13b29e~mv2_d_4032_3024_s_4_2.avif', alt: 'Patio', tags: ['Patios'] },
@@ -25,7 +51,7 @@ const Gallery: React.FC = () => {
             Our <span className="italic text-sage-green">Portfolio</span>
           </h2>
           <LeafDivider />
-          <p className="copy-md max-w-3xl mx-auto mt-8">
+          <p className="text-secondary font-light text-base sm:text-lg lg:text-xl max-w-3xl mx-auto mt-8 leading-relaxed">
             Explore our recent projects and see the quality craftsmanship that sets us apart.
           </p>
         </div>
@@ -50,8 +76,42 @@ const Gallery: React.FC = () => {
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {visible.map((img, idx) => (
-            <figure key={idx} className="overflow-hidden rounded-2xl shadow-soft bg-off-white">
-              <img src={img.src} alt={img.alt} className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
+            <figure key={idx} className={`overflow-hidden rounded-2xl shadow-soft bg-off-white ${
+              img.isBeforeAfter ? 'sm:col-span-2 lg:col-span-3' : ''
+            }`}>
+              {img.isBeforeAfter ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 h-auto">
+                  <div className="relative">
+                    <img 
+                      src={img.src} 
+                      alt={img.alt} 
+                      className="w-full h-64 md:h-80 object-cover hover:scale-105 transition-transform duration-500" 
+                      loading="lazy" 
+                    />
+                    <div className="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      BEFORE
+                    </div>
+                  </div>
+                  <div className="relative">
+                    <img 
+                      src={img.afterSrc} 
+                      alt={img.afterAlt} 
+                      className="w-full h-64 md:h-80 object-cover hover:scale-105 transition-transform duration-500" 
+                      loading="lazy" 
+                    />
+                    <div className="absolute top-4 left-4 bg-sage-green text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      AFTER
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <img 
+                  src={img.src} 
+                  alt={img.alt} 
+                  className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500" 
+                  loading="lazy" 
+                />
+              )}
             </figure>
           ))}
         </div>

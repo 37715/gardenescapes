@@ -40,7 +40,7 @@
 
   /* Standardize medium-body copy; keep light weight per your preference */
   .copy-md {
-    @apply text-secondary text-lg sm:text-xl font-light leading-relaxed;
+    @apply text-secondary text-base sm:text-lg lg:text-xl font-light leading-relaxed;
     font-family: 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', 'Roboto', sans-serif;
   }
 

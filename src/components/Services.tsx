@@ -1,5 +1,5 @@
 import React from 'react';
-import { Leaf, Square, Grab as Grass, Fence, Loader as Road, Shovel } from 'lucide-react';
+import { Leaf, Square, Grab as Grass, Fence, Loader as Road, Shovel, Waves, ChefHat } from 'lucide-react';
 import LeafDivider from './LeafDivider';
 
 const Services: React.FC = () => {
@@ -8,6 +8,16 @@ const Services: React.FC = () => {
       icon: Leaf,
       title: 'Garden Design & Landscaping',
       description: 'Bespoke designs, planting plans, and complete garden transformations tailored to your space and lifestyle.'
+    },
+    {
+      icon: ChefHat,
+      title: 'Bespoke Outdoor Kitchens',
+      description: 'Custom-designed outdoor cooking spaces with premium materials, integrated appliances, and functional layouts for the perfect al fresco dining experience.'
+    },
+    {
+      icon: Waves,
+      title: 'Water Features',
+      description: 'Stunning ponds, waterfalls, and architectural water elements that create tranquil focal points and enhance your outdoor ambiance.'
     },
     {
       icon: Square,
@@ -44,10 +54,9 @@ const Services: React.FC = () => {
             Our <span className="italic text-sage-green">Services</span>
           </h2>
           <LeafDivider />
-          <p className="text-lg md:text-xl text-deep-sage max-w-3xl mx-auto leading-relaxed mt-8">
-            <span className="text-charcoal font-normal">From initial design concepts to final installation, we provide comprehensive 
+          <p className="text-lg md:text-xl text-secondary max-w-3xl mx-auto leading-relaxed mt-8 font-light">
+            From initial design concepts to final installation, we provide comprehensive 
             landscaping services that transform your outdoor vision into reality.
-            </span>
           </p>
         </div>
 
@@ -65,7 +74,7 @@ const Services: React.FC = () => {
                   {service.title}
                 </h3>
               </div>
-              <p className="text-deep-sage leading-relaxed">
+              <p className="text-secondary leading-relaxed font-light">
                 {service.description}
               </p>
             </div>
@@ -73,7 +82,7 @@ const Services: React.FC = () => {
         </div>
 
         <div className="text-center mt-16">
-          <p className="text-lg text-deep-sage mb-8">
+          <p className="text-lg text-secondary mb-8 font-light">
             Not sure which service you need? We offer free consultations to discuss your project.
           </p>
           <button 
