@@ -26,10 +26,6 @@ const Gallery: React.FC = () => {
       isBeforeAfter: true
     },
     
-    // Garden after photos as individual items
-    { src: '/gallery/1/garden after.jpg', alt: 'Garden Transformation Result', tags: ['Gardens'] },
-    { src: '/gallery/1/garden 2 after.jpg', alt: 'Garden Renovation Result', tags: ['Gardens'] },
-    
     // Driveway projects
     { src: '/gallery/1/driveway 1.avif', alt: 'Modern Driveway Installation', tags: ['Driveways'] },
     { src: '/gallery/1/driveway 2.avif', alt: 'Block Paving Driveway', tags: ['Driveways'] },

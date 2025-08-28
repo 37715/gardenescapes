@@ -13,7 +13,9 @@ const ActionsBar: React.FC = () => {
             <MessageCircle size={20} />
           </a>
           <a
-            href="<ADD_FACEBOOK_URL>"
+            href="https://www.facebook.com/Gardenescapeslandscapingltd"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center justify-center w-12 h-12 bg-blue-500 text-white rounded-xl shadow-sm hover:bg-blue-600 transition-colors"
           >
             <Facebook size={20} />
